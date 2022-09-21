@@ -70,6 +70,7 @@ public class Lab2p1 {
 			case 7: System.out.println("Program terminating ...");
 			}
 		} while (choice < 7);
+		sc.close();
 	}
 	
 	public static void mulTest() {
