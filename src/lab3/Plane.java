@@ -60,7 +60,7 @@ public class Plane {
 	
 	public void showEmptySeats() {
 		System.out.println("The following seats are empty:");
-		for (int i=0; i<12; i++) {
+		for (int i=0; i<seat.length;i++) {
 			if (this.seat[i].isOccupied() == false) {
 				System.out.println("SeatID " + (i+1));
 			}
@@ -70,7 +70,7 @@ public class Plane {
 	public void showAssignedSeats(boolean bySeatId) {
 		System.out.println("The seat assignments are as follows:");
 		if (bySeatId) {
-			for (int i=0; i<12; i++) {
+			for (int i=0; i<seat.length; i++) {
 				if (seat[i].isOccupied()) {
 					System.out.println("SeatID " + seat[i].getSeatID() + " assigned to CustomerID " + seat[i].getCustomerID());
 				}
@@ -79,7 +79,7 @@ public class Plane {
 		//else by customerId
 		else {
 			PlaneSeat [] seatCopy = sortSeats();
-			for (int i=0; i<12-numEmptySeat; i++) {
+			for (int i=0; i< (seat.length) - numEmptySeat; i++) {
 					System.out.println("SeatID " + seatCopy[i].getSeatID() + " assigned to CustomerID " + seatCopy[i].getCustomerID());
 			}
 		}
@@ -98,7 +98,10 @@ public class Plane {
 	}
 	
 	public void unAssignSeat(int seatId) {
-		if (seat[seatId-1].isOccupied() == true) {
+		if (seatId-1 > 12 || seatId < 1) {
+			System.out.println("Wrong SeatId, there are only 12 seats.");
+		}
+		else if (seat[seatId-1].isOccupied() == true) {
 			seat[seatId-1].unAssign();
 			System.out.println("Seat Unassigned!");
 			numEmptySeat++;
