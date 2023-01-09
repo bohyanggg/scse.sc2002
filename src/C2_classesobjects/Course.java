@@ -1,4 +1,4 @@
-package testpackage;
+package C2_classesobjects;
 
 public class Course {
 	

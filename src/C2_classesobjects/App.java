@@ -1,4 +1,4 @@
-import testpackage.*;
+package C2_classesobjects;
 
 public class App {
     public static void main(String[] args){	

@@ -1,8 +1,8 @@
-package chapter3_package;
+package C3_Inheritance;
 
 public class FiveGPhone {
 
-    public void printCredit() {
+    public static void main(String[] args) {
         System.out.println("This is printing from FiveGPhone.");
     }
 }
